@@ -1,0 +1,11 @@
+.cart-content {
+    background-color: burlywood;
+    padding: 3rem;
+    position: sticky;
+    top: 6rem;
+    height: 80vh;
+}
+
+p {
+    margin-top: 1.5rem;
+}

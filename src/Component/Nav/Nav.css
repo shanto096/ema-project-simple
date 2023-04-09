@@ -1,0 +1,28 @@
+.nav-container {
+    display: flex;
+    height: 6rem;
+    justify-content: space-between;
+    background-color: #1C2B35;
+    padding: 0rem 5rem 0rem 5rem;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+}
+
+.manu-list,
+a {
+    margin-right: 2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.5s;
+    font-size: 17px;
+}
+
+.manu-list,
+a:hover {
+    color: rgb(221, 11, 11);
+    font-size: 25px;
+    transition: 0.5s;
+}
