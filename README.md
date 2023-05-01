@@ -1,2 +1,2 @@
 # ema-project-simple
-live link: https://candid-lollipop-3f4872.netlify.app/
+live link: https://reliable-donut-8f2b11.netlify.app/
