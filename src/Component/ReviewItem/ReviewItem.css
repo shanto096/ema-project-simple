@@ -1,0 +1,39 @@
+.review {
+    border: 2px solid gray;
+    padding: 8px;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.review-content {
+    flex-grow: 1;
+}
+
+.review img {
+    height: 100px;
+    width: 100px;
+}
+
+.review-name p,
+h3 {
+    margin-top: -3px;
+    margin-left: 1rem;
+    margin-right: 40px;
+}
+
+.btn-delete {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: bisque;
+}
+
+.icon-remove {
+    font-size: 20px;
+    color: rgb(222, 41, 41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

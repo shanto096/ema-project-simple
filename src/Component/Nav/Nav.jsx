@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from '../../img/Logo.svg'
 import './Nav.css'
+import { Link } from 'react-router-dom';
+import Activelink from '../Activelink/Activelink';
 
 const Nav = () => {
     return (
@@ -9,10 +11,10 @@ const Nav = () => {
               <img src={logo} alt=""/>
             </div>
             <div className='menu-list'>
-                <a href="">Order</a>
-                <a href="">Order Review</a>
-                <a href="">Manage Inventory</a>
-                <a href="">Login</a>
+                <Activelink to="/">Shop</Activelink>
+                <Activelink to="/oder review">Order</Activelink>
+                <Activelink to="/Inventory"> Inventory</Activelink>
+                <Activelink to="/Login">Login</Activelink>
             </div> 
         </div>
     );

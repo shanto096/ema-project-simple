@@ -2,10 +2,23 @@
     background-color: burlywood;
     padding: 3rem;
     position: sticky;
-    top: 6rem;
+    top: 4.7rem;
     height: 80vh;
 }
 
 p {
     margin-top: 1.5rem;
+}
+
+.clear-cart {
+    background-color: rgb(255, 17, 0);
+    padding-right: 3.7rem;
+    font-weight: 800;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-t {
+    margin-left: 2rem;
 }

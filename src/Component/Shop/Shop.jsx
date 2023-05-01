@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import "./Shop.css"
 import Product from '../Products/Product';
 import Cart from '../Cart/Cart';
-import { addToDb, getShoppingCart } from '../fakeDb/FakeDb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../fakeDb/FakeDb';
+import { Link } from 'react-router-dom';
 
 
 const Shop = () => {
@@ -10,7 +11,7 @@ const Shop = () => {
     const[cart, setCart] = useState([])
 
     useEffect(()=>{
-        fetch("../../../public/Api/ProductData.json")
+        fetch("https://raw.githubusercontent.com/ProgrammingHero1/ema-john-resources/main/fakeData/products.json")
         .then(res => res.json())
         .then(data => setProduct(data))
     },[])
@@ -33,22 +34,26 @@ const Shop = () => {
     },[products])
      
     const handelAddToCart = (product) =>{
-        const newCart = [...cart,product]
-
-        // let newCart =[];
-        // const exists = cart.find(pd=>pd.id === product.id)
-        //     if (!exists) {
-        //         product.quantity = 1;
-        //         newCart = [...cart, product]
-        //     }
-        //     else{
-        //         exists.quantity = exists.quantity +1;
-        //         const remaining = cart.filter(pd =>pd.id !== product.id)
-        //         newCart = [...remaining. exists]
-        //     }
+        let newCart = [...cart, product]
+        
+        const exists = cart.find(pd=>pd.id === product.id)
+            if (!exists) {
+                product.quantity = 1;
+                newCart = [...cart, product]
+            }
+            else{
+                exists.quantity = exists.quantity +1;
+                const remaining = cart.filter(pd =>pd.id !== product.id)
+                newCart = [...remaining, exists]
+            }
 
         setCart(newCart)
         addToDb(product.id)
+     }
+
+     const handleclearcart = () =>{
+       setCart([])
+       deleteShoppingCart()
      }
     return (
         <div className='shop-container'>
@@ -63,7 +68,9 @@ const Shop = () => {
                 }
             </div>
             <div className='order-container'>
-                <Cart cart ={cart}></Cart>
+                <Cart cart ={cart} handleclearcart={handleclearcart}>
+                    <Link to="/oder review"><button className='review-order'>Review Order</button></Link>
+                </Cart>
                 
             </div>
             
